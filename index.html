@@ -400,12 +400,12 @@ flex-direction:column;
 z-index:999;
 ">
 
-<h1>🏆 BEST BROTHER AWARD 🏆</h1>
+<h1>🏆  BEST LITTLE SISTER AWARD 🏆</h1>
 
-<h2>❤️ Officially World's Best Brother ❤️</h2>
+<h2> ❤️ Officially World's Sweetest Sister ❤️</h2>
 
 <p>
-Thank You For Everything 🤗
+🤗 Thank You For Always Making Me Smile 🤗
 </p>
 
 </div>
@@ -485,8 +485,26 @@ Submit
 </button>
 
 </div>
-
 <div id="treasureGame" style="display:none;">
+
+<h2>🗝️ Treasure Hunt</h2>
+
+<p id="treasureClue">
+Main roz tumhare saath rehta hoon,
+Par kabhi bolta nahi.
+Kitabon aur notebooks ke paas mujhe dhoondho. 📚
+</p>
+
+<input id="treasureInput">
+
+<button onclick="checkTreasure()">
+Submit
+</button>
+
+<p id="treasureStep">Clue 1 / 3</p>
+
+</div>
+<!-- <div id="treasureGame" style="display:none;">
 
 
   
@@ -500,7 +518,7 @@ Submit
 Submit
 </button>
 
-</div>
+</div> -->
 
 <div id="giftScreen" style="display:none;">
 <h2>tap me 🎁</h2>
@@ -537,7 +555,15 @@ Open Card 🎉
 </div>
 <div id="mainContent">
 
-<h1>🎉🎉🎉 Happy Birthday chota don in advance....🎉🎉🎉</h1>
+<h1>🎂 Happy Birthday, Gola ! 🎂
+
+You fill my life with joy and happiness every day. 💖
+
+May all your dreams come true and may your smile always shine bright.
+
+🎉 Happy Birthday to the World's best GOLA 😂! 🎉
+❤️ Love You Always ❤️
+</h1>
    
 <button onclick="showAward()">
 🏆 Claim Award
@@ -562,11 +588,23 @@ Open Card 🎉
 
 <h2>📅 Memory Timeline</h2>
 
-<p>2022 📸 First Meeting</p>
-<p>2023 🎉 Fun Moments</p>
-<p>2024 ❤️ Best Memories</p>
-<p>2025 🚀 Amazing Journey</p>
-
+<p>👶 2010 💖 Welcome to the Family</p>
+<p>🎀 2011 😊 First Cute Smiles<p>
+</p>🧸 2012 🌈 Childhood Fun Beging</p>
+<p>🎠 2013 🎉 Endless Playtime</p>
+<p>🎨 2014 ✨ Sweet Little Adventures</p>
+<p>📚 2015 🌟 Learning New Things</p>
+<p>🎂 2016 💕 Growing Up Beautifully</p>
+<p>🏃 2017 😄 Fun & Laughter Everywhere</p>
+<p>🎁 2018 🌸 Precious Family Moments</p>
+<p>📸 2019 💫 Unforgettable Memories</p>
+<p>🌍 2020 🤗 Together Through Everything</p>
+<p>🎈 2021 💖 More Smiles, More Happiness</p>
+<p>🎉 2022 ✨ Amazing Moments Together</p>
+<p>🌟 2023 🎊 Creating Beautiful Memories</p>
+<p>❤️ 2024 🫂 Best Sister, Best Friend</p>
+<p>🚀 2025 🌈 Chasing Dreams Together</p>
+<p>👑 2026 🎂 Celebrating Your Special Day</p>
 </div>
 
 <div id="cake">🎂</div>
@@ -594,12 +632,19 @@ border-radius:15px;">
 <p>
 Happy Birthday chota don ❤️<br><br>
 
-Aap hamesha khush raho,
-healthy raho aur life me bahut success pao. 🎉
 
-Thank you for all the memories and support. 🙌
+Dear Chhoti Behan,
 
-🎂 Have a wonderful birthday!
+Chahe hum kitna bhi ladein, ek dusre ko kitna bhi pareshan karein, tum hamesha meri life ki sabse special logon mein se ek rahogi. ❤️
+
+Main shayad har baar nahi bolta, lekin mujhe tum par bahut garv hai aur main hamesha tumhare saath rahunga.
+
+Hamesha khush rehna, muskurate rehna aur apne sapno ko poora karna.
+
+🎂 Happy Birthday, Meri Pyari Chhoti Behan! 🎂
+
+✨ Love You More Than You Know ✨
+
 </p>
 
 </div>
@@ -633,7 +678,7 @@ Thank you for all the memories and support. 🙌
 
 
 <script>
-
+let treasureLevel = 1;
 let puzzleCount = 0;
 
 function solvePuzzle(piece){
@@ -742,10 +787,54 @@ alert("Try Again 😄");
 function checkTreasure(){
 
 let ans =
-document.getElementById("treasureInput").value
-.toLowerCase();
+document.getElementById("treasureInput")
+.value.toLowerCase().trim();
 
-if(ans === "june"){
+if(treasureLevel === 1){
+
+if(ans === "study table" || ans === "table"){
+
+treasureLevel = 2;
+
+document.getElementById("treasureClue").innerHTML =
+"Jahan tum apne sapne dekhti ho, Aur har raat aaram karti ho, Wahin kahin tumhara agla surprise chhupa hai. 🛏️✨";
+
+document.getElementById("treasureStep").innerHTML =
+"Clue 2 / 3";
+
+document.getElementById("treasureInput").value = "";
+
+}else{
+
+alert("Wrong Answer 😄");
+
+}
+
+}else if(treasureLevel === 2){
+
+if(ans === "bed"){
+
+treasureLevel = 3;
+
+document.getElementById("treasureClue").innerHTML =
+"Mirror ke saamne ek baar muskurao 😊 Phir uske aas-paas dhyan se dekho, Tumhara special birthday surprise tumhara intezaar kar raha hai! 🎁🎂";
+
+document.getElementById("treasureStep").innerHTML =
+"Clue 3 / 3";
+
+document.getElementById("treasureInput").value = "";
+
+}else{
+
+alert("Wrong Answer 😄");
+
+}
+
+}else if(treasureLevel === 3){
+
+if(ans === "mirror"){
+
+alert("🎉 Treasure Hunt Complete!");
 
 document.getElementById("treasureGame").style.display =
 "none";
@@ -753,10 +842,11 @@ document.getElementById("treasureGame").style.display =
 document.getElementById("spinScreen").style.display =
 "flex";
 
-}
-else{
+}else{
 
-alert("Wrong clue 😄");
+alert("Wrong Answer 😄");
+
+}
 
 }
 
@@ -863,7 +953,7 @@ if(count > 0){
   countdown.innerHTML = count;
 }
 else{
-  countdown.innerHTML = "enjoy your day🎉";
+  countdown.innerHTML = "Is birthday kapdre mile tum hare pass toh hai hi nhi na 😅"
   clearInterval(interval);
 }
 
@@ -873,7 +963,7 @@ else{
 
 // Typing animation
 
-let text = "chota don ji  ❤️";
+let text = "chota don ( Gola ) ❤️";
 let i = 0;
 
 function startTyping(){
@@ -900,9 +990,9 @@ let photos = [
   "photo3.jpg"
 ];
 let memories = [
-  "📸 First Memory Together",
+  "📸 keep smileing gole",
   "🎉 Best Birthday Moment",
-  "❤️ Forever Brothers"
+  "❤️ my sister"
 ];
 
 let index = 0;
